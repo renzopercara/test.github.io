@@ -42,10 +42,7 @@
 $(document).ready(function() {
     // Función para ejecutar jQuery dentro del iframe
     function runPlay() {
-        var iframe = $('#myIframe')[0].contentWindow;
-        $(iframe.document).ready(function() {
-            $(iframe.document).find('#view_play').click();
-        });
+        $('#view_play').click()
     }
 
     // Manejador de evento para el botón
