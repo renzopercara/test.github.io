@@ -5,11 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ejemplo</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #myIframe {
+        width: 100%;
+        height: calc(100% - 40px); /* Ajusta el tamaño del iframe para dejar espacio para el botón */
+        border: none;
+    }
+
+    #btnPlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        z-index: 9999;
+    }
+</style>
 </head>
 <body>
 
-<iframe id="myIframe" src="https://www.basquetpass.tv/"></iframe>
 <button id="btnPlay">Play</button>
+<iframe id="myIframe" src="https://www.basquetpass.tv/"></iframe>
 
 <script>
 $(document).ready(function() {
