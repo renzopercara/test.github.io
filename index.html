@@ -1,1 +1,32 @@
-TEST
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<iframe id="myIframe" src="https://www.basquetpass.tv/"></iframe>
+<button id="btnPlay">Play</button>
+
+<script>
+$(document).ready(function() {
+    // Función para ejecutar jQuery dentro del iframe
+    function runPlay() {
+        var iframe = $('#myIframe')[0].contentWindow;
+        $(iframe.document).ready(function() {
+            $(iframe.document).find('#btn-play').click();
+        });
+    }
+
+    // Manejador de evento para el botón
+    $('#btnPlay').on('click', function() {
+        runPlay();
+    });
+});
+</script>
+
+</body>
+</html>
